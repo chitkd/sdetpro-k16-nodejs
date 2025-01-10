@@ -14,12 +14,12 @@ if (height > 0 && weight > 0) {
 
     if (bmi < MIN_NORMAL_WEIGHT_BMI) {
         deviation = MIN_NORMAL_WEIGHT_BMI * height ** 2 - weight;
-        console.log(`You should increase ${deviation.toFixed(1)} kg`);
+        console.log(`-->You should increase ${deviation.toFixed(1)} kg`);
     } else if (bmi < MIN_OVERWEIGHT_BMI) {
-        console.log("You don't need to increase/decrease weight");
+        console.log("(`-->You don't need to increase/decrease weight");
     } else {
         deviation = Math.abs(MAX_NORMAL_WEIGHT_BMI * height ** 2 - weight);
-        console.log(`You should decrease ${deviation.toFixed(1)} kg`);
+        console.log(`--> You should decrease ${deviation.toFixed(1)} kg`);
     }
 } else if (height <= 0) {
     console.log("Your height should be greater than 0");
