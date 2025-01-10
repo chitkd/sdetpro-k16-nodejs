@@ -32,7 +32,7 @@ console.log("See you again!");
 
 function printGameMenu(){
     console.log(`
-        * --- LUCKY NUMBER GAME---
+        * ---- LUCKY NUMBER GAME----
         * 1. Guess a number
         * 0. Exit
         `);
