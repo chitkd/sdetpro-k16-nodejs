@@ -9,11 +9,11 @@ function createArray() {
     let numberOfElement = inputANumber("Please input the number of Elements: ");
 
     while (numberOfElement <= 0) {
-        numberOfElement = inputANumber("Please input the number of Elements again: ");
+        numberOfElement = parseInt(inputANumber("Please input the number of Elements again: "), 10);
     }
 
     for (let index = 0; index < numberOfElement; index++) {
-        array[index] = inputANumber("Please input a number: ");
+        array[index] = parseInt(inputANumber("Please input a number: "), 10);
     }
     return array;
 }
