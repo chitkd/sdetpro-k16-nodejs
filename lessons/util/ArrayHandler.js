@@ -7,20 +7,26 @@ const {
 function createArray() {
     let array = [];
     let numberOfElement = inputANumber("Please input the number of Elements: ");
-
-    while (numberOfElement <= 0) {
-        numberOfElement = parseInt(inputANumber("Please input the number of Elements again: "), 10);
+    let isInteger = Number.isInteger(numberOfElement);
+    while (numberOfElement <= 0 || !isInteger) {
+        numberOfElement = inputANumber("Please input the number of Elements again: ");
+        isInteger = Number.isInteger(numberOfElement);
     }
 
     for (let index = 0; index < numberOfElement; index++) {
-        array[index] = parseInt(inputANumber("Please input a number: "), 10);
+        array[index] = inputANumber("Please input an integer number as an element of an array: ");
+        isInteger = Number.isInteger(array[index]);
+        while (!isInteger){
+            array[index] = inputANumber("Please input an integer number again as an element of an array: ");
+            isInteger = Number.isInteger(array[index]);
+        }
     }
     return array;
 }
 
 const inputANumber = function (strings) {
     const readline = require("readline-sync");
-    return readline.question(`${strings}`);
+    return Number(readline.question(`${strings}`));
 }
 
 function countOddNumber(array) {
