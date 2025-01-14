@@ -10,6 +10,6 @@ console.log(array);
 let oddCount = countOddNumber(array);
 let evenCount = countEvenNumber(array);
 
-console.log(`Even numders: ${evenCount}`);
-console.log(`Odd numders: ${oddCount}`);
+console.log(`Even numbers: ${evenCount}`);
+console.log(`Odd numbers: ${oddCount}`);
 

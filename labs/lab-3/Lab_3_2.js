@@ -11,5 +11,9 @@ console.log(array);
 let min = findMin(array);
 let max = findMax(array);
 
-console.log(`Minimum: ${min}`);
-console.log(`Maximum: ${max}`);
+if (min === max) {
+    console.log("There is no min/max value. All elements in the array has the same value");
+} else {
+    console.log(`Minimum: ${min}`);
+    console.log(`Maximum: ${max}`);
+}

@@ -16,7 +16,7 @@ function createArray() {
     for (let index = 0; index < numberOfElement; index++) {
         array[index] = inputANumber("Please input an integer number as an element of an array: ");
         isInteger = Number.isInteger(array[index]);
-        while (!isInteger){
+        while (!isInteger) {
             array[index] = inputANumber("Please input an integer number again as an element of an array: ");
             isInteger = Number.isInteger(array[index]);
         }
@@ -75,7 +75,7 @@ function findMax(array) {
 }
 
 function sortMinToMax(array) {
-    for (let index1 = 0; index1 < array.length; index1++) {
+    for (let index1 = 0; index1 < array.length - 1; index1++) {
         for (let index2 = index1 + 1; index2 < array.length; index2++) {
             if (array[index2] < array[index1]) {
                 let temp = array[index1];
@@ -94,7 +94,7 @@ function merge2SortedIntegerArray(array1, array2) {
             if (array2[index2] < array1[index1]) {
                 resultArray.push(array2[index2]);
                 array2.splice(index2, 1);
-            } else{
+            } else {
                 break;
             }
         }
@@ -102,13 +102,13 @@ function merge2SortedIntegerArray(array1, array2) {
         array1.splice(index1, 1);
     }
 
-    if (array1.length > 0){
+    if (array1.length > 0) {
         array1.forEach(element => {
             resultArray.push(element);
         });
     }
 
-    if (array2.length > 0){
+    if (array2.length > 0) {
         array2.forEach(element => {
             resultArray.push(element);
         });
@@ -116,10 +116,10 @@ function merge2SortedIntegerArray(array1, array2) {
     return resultArray;
 }
 
-function isSortedMinToMax(array){
+function isSortedMinToMax(array) {
     for (let index1 = 0; index1 < array.length; index1++) {
         for (let index2 = index1; index2 < array.length; index2++) {
-            if (array[index1] > array[index2]){
+            if (array[index1] > array[index2]) {
                 return false;
             }
         }
