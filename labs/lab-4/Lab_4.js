@@ -65,16 +65,16 @@ function updateBalance(bankAccounts) {
             foundBankAccount = bankAccount;
             let money = Number(readline.question('Please enter the money you want to withdraw: '));
             if (bankAccount.balance < money) {
+                console.log(`You cannot withdraw ${money} because it is more than your current balance ${JSON.stringify(bankAccount.balance)}`);
                 bankAccount.balance = 0;
             } else {
                 bankAccount.balance -= money;
+                console.log(`The bank account after updating: ${JSON.stringify(bankAccount)}`);
             }
-            console.log(`The bank account after updating: ${JSON.stringify(bankAccounts)}`);
         }
     }
-
     if (JSON.stringify(foundBankAccount) === '{}') {
-        console.log(`The bank account with account Number = '${accountNumber}' is not found so cannot withdraw the money`);
+        console.log(`The bank account with account Number = '${accountNumber}' is not found`);
     }
 }
 
