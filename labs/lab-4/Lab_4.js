@@ -1,4 +1,4 @@
-let user01 = {
+const user01 = {
     accountNumber: "2025001",
     routingNumber: "User_001",
     accountName: "Nguyen Van A",
@@ -6,32 +6,46 @@ let user01 = {
 }
 
 // Creating another Bank Account Object which clone from the previous one and update the accountNumber only
-let user02 = JSON.parse(JSON.stringify(user01));
+const user02 = JSON.parse(JSON.stringify(user01));
 user02.accountNumber = "2025002";
+user02.accountName = "Le Nguyen"
 
 // Put them into ann array call: bankAccounts
-let bankAccounts = [user01, user02];
+const bankAccounts = [user01, user02];
 
-// Write a consolse interface app
-printConsoleInterfaceMenu();
 const readline = require('readline-sync');
-let userNumber = getUserNumber();
-switch (userNumber) {
-    case 1:
-        findAnAccount(bankAccounts);
-        break;
-    case 2:
-        updateBalance(bankAccounts);
-        break;
-    case 0:
-        break;
-    default:
-        console.log('Your task number is not on the list');
+bankApp();
+
+// Support function
+function bankApp() {
+
+    // Write a consolse interface app
+    printConsoleInterfaceMenu();
+    let userNumber = getUserNumber();
+    switch (userNumber) {
+        case 1:
+            findAnAccount(bankAccounts);
+            break;
+        case 2:
+            //updateBalance(bankAccounts);
+            updateBalanceEnhancement(bankAccounts);
+            break;
+        case 0:
+            break;
+        default:
+            console.log('Your task number is not on the list');
+    }
+
+    console.log('See you next time!');
 }
 
 function printConsoleInterfaceMenu() {
-    console.log("=== Banking application ===");
-    console.log('1. Find an account\n2. Update balance\n0. Exit the program');
+    console.log(
+        `=== Banking application ===
+    1. Find an account
+    2. Update balance
+    0. Exit the program
+    `);
 }
 function getUserNumber() {
     return Number(readline.question('Please enter your option: '))
@@ -49,6 +63,7 @@ function findAnAccount(bankAccounts) {
 }
 
 function findAccountByAccountNumber(bankAccounts, accountNumber) {
+    // if account found, reassign foundAccount for the found one
     for (const bankAccount of bankAccounts) {
         if (bankAccount.accountNumber === accountNumber) {
             return bankAccount;
@@ -76,6 +91,33 @@ function updateBalance(bankAccounts) {
     if (JSON.stringify(foundBankAccount) === '{}') {
         console.log(`The bank account with account Number = '${accountNumber}' is not found`);
     }
+}
+
+function updateBalanceEnhancement(bankAccounts) {
+    const MAX_ALLOWED_ATTEMP = 3;
+    let attempts = 0;
+    do {
+        const foundAccount = findAccountByAccountNumber(bankAccounts);
+        const isNotfound = foundAccount.accountNumber === undefined;
+        if (isNotfound) {
+            console.log(`Apptemp time: ${attempts + 1}`);
+            attempts++;
+        } else {
+            // Logic to update balance & exit the function
+            const { balance } = foundAccount;
+            console.log(`Your balance is: ${balance}`);
+            const expectedWithdrawMoney = Number(readline.question('Please input withdraw amount: '));
+            if (expectedWithdrawMoney > balance) {
+                console.log('Insufficient balance!');
+
+            } else {
+                console.log('Succeed!');
+                foundAccount.balance = balance - expectedWithdrawMoney;
+                attempts = MAX_ALLOWED_ATTEMP;
+            }
+
+        }
+    } while (attempts < MAX_ALLOWED_ATTEMP);
 }
 
 
