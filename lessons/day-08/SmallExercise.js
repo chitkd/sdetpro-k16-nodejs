@@ -1,7 +1,9 @@
 
 // Given a value, please find the key
 let foundKey = undefined;
+//let targetValue = 3;
 let targetValue = '3';
+
 
 new Map([
     ['foo', 3],
