@@ -36,6 +36,6 @@ ti.bankAccount.saving.accountNumber = '9999';
 // console.log(teo);
 // console.log(ti);
 
-console.log(Object.keys(teo));
-console.log(Object.values(teo));
+// console.log(Object.keys(teo));
+// console.log(Object.values(teo));
 console.log(Object.entries(teo));
