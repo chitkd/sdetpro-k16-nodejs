@@ -20,36 +20,19 @@ const groupWords = groupWord(individualWords);
 console.log(groupWords);
 
 function groupWord(individualWords) {
-    let initialWord = {
-        word: "",
-        count: 0
-    }
-    let wordArray = [];
+    let wordArray = {};
     for (const word of individualWords) {
         if (word === "") {
             continue;
         } else {
-            let foundExistingWord = existingWord(wordArray, word);
-            if (JSON.stringify(foundExistingWord) === '{}') {
-                let newWord = JSON.parse(JSON.stringify(initialWord));
-                newWord.word = word;
-                newWord.count = 1;
-                wordArray.push(newWord);
+            if (wordArray[word]) {
+                wordArray[word]++;
             } else {
-                foundExistingWord.count++;
+                wordArray[word] = 1;
             }
         }
     }
     return wordArray;
-}
-
-function existingWord(wordArray, word) {
-    for (const wordObj of wordArray) {
-        if (wordObj.word === word) {
-            return wordObj;
-        }
-    }
-    return {};
 }
 
 function inputString() {
