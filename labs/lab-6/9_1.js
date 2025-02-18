@@ -4,20 +4,12 @@ const {
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
-fetch(`${url}`)
+fetch(url)
 .then(function (rawResponse) {
-    return getRawResponse(rawResponse);
+    return rawResponse.json();
 })
 .then(function (data) {
     apiApp(data)
 })
 
-function getRawResponse(rawResponse) {
-    console.log('Get the raw response...');
-    return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            resolve(rawResponse.json());
-        }, 1 * 1000);
-    })
-}
 

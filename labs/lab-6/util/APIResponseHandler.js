@@ -17,9 +17,13 @@ function apiApp(allPosts) {
             case 0:
                 isContinuing = false;
                 break;
+            default:
+                console.log("Invalid option!");
+
         }
     }
     console.log("See you again!");
+    process.exit(1);
 }
 
 function getAllPostForUser(allPosts, userId) {
