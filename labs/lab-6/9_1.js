@@ -12,4 +12,13 @@ fetch(url)
     apiApp(data)
 })
 
-
+// while (sthStillTrue) {
+//     switch (sth) {
+//         case 1:
+//             break;
+//         case 2:
+//             break;
+//         default:
+//             break;
+//     }
+// }

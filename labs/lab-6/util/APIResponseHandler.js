@@ -3,10 +3,10 @@ const readline = require("readline-sync");
 function apiApp(allPosts) {
     let isContinuing = true;
     while (isContinuing) {
-        let userId = inputUserId();
-        let postId = inputPostId();
         printMenu();
         let option = getUserOption();
+        let userId = inputUserId();
+        let postId = inputPostId();
         switch (option) {
             case 1:
                 getPostContent(allPosts, userId, postId);
@@ -19,6 +19,7 @@ function apiApp(allPosts) {
                 break;
             default:
                 console.log("Invalid option!");
+                break;
 
         }
     }
@@ -31,8 +32,7 @@ function getAllPostForUser(allPosts, userId) {
         return post.userId === Number(userId);
     });
     if (posts.length > 0) {
-        console.log(`All posts for that user:`);
-        console.log(posts);
+        console.log("All posts for that user", posts);
     } else {
         console.log('Post not found!');
     }
