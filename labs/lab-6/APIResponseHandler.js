@@ -5,13 +5,17 @@ function apiApp(allPosts) {
     while (isContinuing) {
         printMenu();
         let option = getUserOption();
-        let userId = inputUserId();
-        let postId = inputPostId();
+        let userId;
+        let postId;
         switch (option) {
             case 1:
+                userId = inputUserId();
+                postId = inputPostId();
                 getPostContent(allPosts, userId, postId);
                 break;
             case 2:
+                userId = inputUserId();
+                postId = inputPostId();
                 getAllPostForUser(allPosts, userId);
                 break;
             case 0:
@@ -34,7 +38,7 @@ function getAllPostForUser(allPosts, userId) {
     if (posts.length > 0) {
         console.log("All posts for that user", posts);
     } else {
-        console.log('Post not found!');
+        console.log('No post found!');
     }
 }
 
@@ -46,7 +50,7 @@ function getPostContent(allPosts, userId, postId) {
         console.log(`The post content is found as below:`);
         console.log(post);
     } else {
-        console.log('Post not found!');
+        console.log('No post found!');
     }
 }
 
