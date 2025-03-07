@@ -51,7 +51,8 @@ class RequestHandler {
         let postList = [];
         
         for await (const post of allPosts) {
-                let newPost = new Post(post.userId, post.id, post.title, post.body);
+            const {userId, id, title, body} = post;
+                let newPost = new Post(userId, id, title, body);
                 postList.push(newPost);
         }
 

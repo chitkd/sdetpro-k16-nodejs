@@ -16,3 +16,4 @@ async function main() {
    await requestHandler.printAllPosts(userId, url);
     await requestHandler.printTargetPost(userId, postId, url);
 }
+
