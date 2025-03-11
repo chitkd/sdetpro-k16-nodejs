@@ -7,22 +7,22 @@ class MethodOverloading {
     //     return a + b + c;
     // }
 
-    // // Rest parameter
-    // static add(...nums) {
-    //    let sum = 0;
-    //     for (const num of nums) {
-    //         sum += num;
-    //     }
-    //     return sum;
-    // }
+    // Rest parameter
+    static add(...nums) {
+       let sum = 0;
+        for (const num of nums) {
+            sum += num;
+        }
+        return sum;
+    }
 
     // static add(factor, ...nums){
     //     return nums.map(num => num * factor);
     // }
 
-    static add(factor, anotherThing, ...nums){
-        return nums.map(num => num * factor);
-    }
+    // static add(factor, anotherThing, ...nums){
+    //     return nums.map(num => num * factor);
+    // }
 
 
 }

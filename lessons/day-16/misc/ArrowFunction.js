@@ -8,6 +8,14 @@ const add_ = function (a, b) {
     return a + b;
 }
 
+const add__ = (a, b) =>{
+    return a + b;
+}
+
+const add___ = (a, b) => a + b;
+const add____ = (a, b) => console.log(a + b);
+
+
 // Type: Arrow Function
 const arrowAddNumbers = a => console.log(a);
 
@@ -25,6 +33,12 @@ const person = {
 
 person.sayHello();
 
-const array = [1, 2, 3, 4, 5];
+const array = [1, 2, 3, 4, 9];
 const oddNums = array.filter(num => num % 2 !== 0);
-console.log(oddNums);
+
+const filterEvenNums = array.filter(num => num % 2 == 0);
+console.log(filterEvenNums);
+
+
+//console.log(oddNums);
+add____(1, -8);

@@ -9,12 +9,18 @@ function isEvenNumber(number){
     return number % 2 === 0;
 }
 
+function isEvenNumber_ (number){
+    // Details implementation | implementation
+    return number % 2 === 0;
+}
+
 // number: parameter before call, should declare
 const  isOddNumber = function(number){
     //return number % 2 !== 0;
     return number++;
 }
 
+const  isOddNumber_ = number => number % 2 == 0;
 // Common JS Module
 module.exports = { 
     ti: isEvenNumber, 
