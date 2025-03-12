@@ -1,5 +1,7 @@
 // Parent class / Super class / Base class
 class Request {
+    // Class variable
+    static id = 1;
     constructor(url, headers = {}) {
         this.url = url;
         this.headers = headers;
@@ -18,6 +20,10 @@ class Request {
     verifyResponse() {
         console.log('Verifying response...');
 
+    }
+
+    static doSomething() {
+        console.log('This is a class method');
     }
 }
 

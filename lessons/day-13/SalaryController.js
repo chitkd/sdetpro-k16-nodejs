@@ -1,12 +1,19 @@
+'./Employee';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SalaryController = void 0;
 // User-defined data
-class SalaryController {
-    getTotalSalary(employeeList) {
-        let totalSalary = 0;
-        for (const employee of employeeList) {
+var SalaryController = /** @class */ (function () {
+    function SalaryController() {
+    }
+    SalaryController.prototype.getTotalSalary = function (employeeList) {
+        var totalSalary = 0;
+        for (var _i = 0, employeeList_1 = employeeList; _i < employeeList_1.length; _i++) {
+            var employee = employeeList_1[_i];
             totalSalary += employee.salary;
         }
         return totalSalary;
-    }
-}
-
-module.exports = SalaryController;
+    };
+    return SalaryController;
+}());
+exports.SalaryController = SalaryController;
