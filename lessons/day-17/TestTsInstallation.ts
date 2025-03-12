@@ -1,4 +1,4 @@
-let c = 1;
+let b = 1;
 a = 2;
-console.log(c);
+console.log(b);
 
