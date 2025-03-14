@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Horse_1 = require("./Horse");
+var Tiger_1 = require("./Tiger");
+var Dog_1 = require("./Dog");
+var AnimalController_1 = require("./AnimalController");
+var horse = new Horse_1.default("Horse");
+var tiger = new Tiger_1.default("Tiger");
+var dog = new Dog_1.default("Dog");
+var winner = AnimalController_1.default.getWinner([horse, tiger, dog]);
+console.log("Winner is ".concat(winner.getName(), ", with speed: ").concat(winner.getSpeed()));
