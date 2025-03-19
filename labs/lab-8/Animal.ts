@@ -27,6 +27,7 @@ export default class Animal{
         return Math.floor(Math.random() * maxValue) + 1;
     }
 
+    // ***** Remove this method if not used
     toString(): string {
         return `${this.name} - ${this.speed}`;
     }

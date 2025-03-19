@@ -1,5 +1,6 @@
 const Post = require('./Post');
 class RequestHandler {
+    // *****Should define the RequestHandler class with methods printTargetPost and printAllPosts only
     async getRawResponse(url) {
         let rawResponse;
         try {
