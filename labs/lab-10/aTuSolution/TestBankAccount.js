@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var CheckingAccount_1 = require("./CheckingAccount");
+var SavingAccount_1 = require("./SavingAccount");
+var savingAcc = new SavingAccount_1.default();
+var checkingAcc = new CheckingAccount_1.default();
+savingAcc.deposit(1000);
+var balance = savingAcc.withdraw(1000);
+console.log("Saving account balance: " + balance);
+checkingAcc.deposit(1000);
+balance = checkingAcc.withdraw(1000);
+console.log("Checking account balance: " + balance);

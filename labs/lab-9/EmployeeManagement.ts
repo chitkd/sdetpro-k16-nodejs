@@ -42,3 +42,5 @@ if (sortedEmployeeList.length > 0) {
     console.log(`The employee with lowest salary is: ${lowestSalaryEmpSolution2.getName()}`);
 }
 
+
+
