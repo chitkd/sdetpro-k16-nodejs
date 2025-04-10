@@ -46,8 +46,7 @@ export default class EmployeeController {
         }
     }
 
-    // Solution 1: Sort employees base on salary (ascending), name (ascending A-Z)
-    // Solution 2: User sort function to sort employee list
+    // Sort employees base on salary (ascending), name (ascending A-Z)
     static sortEmployeeBySalaryName(employeeList: Employee[]): Employee[] {
         if (employeeList.length > 0) {
             let sortedEmployeeList: Employee[] = employeeList;
